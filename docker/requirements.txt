@@ -1,34 +1,24 @@
-# PyTorch i torchvision 
+# PyTorch and torchvision (torch already in base image pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime)
 --extra-index-url https://download.pytorch.org/whl/cu128
-torch==2.7.1
 torchvision==0.22.1
-torchaudio==2.7.1
 
-# Numpy (version <2 for compatibility with BiRefNet)
+# Numpy (version <2 for compatibility)
 numpy<2
 
-# Basic dependencies
+# Core dependencies
 pillow==11.3.0
 tqdm==4.67.1
 opencv-python-headless
-easydict==1.13
-scipy==1.16.3
 pydantic==2.12.5
 pydantic-settings==2.12.0
 pydantic-tensor==0.2.0
 spconv-cu126==2.3.8
 
-
-# Transformers i AI
+# Transformers and AI (removed peft - not used)
 transformers==4.55.4
-peft==0.18.0
 accelerate==1.12.0
 
-# BiRefNet dependencies
-timm==1.0.22
-kornia==0.8.2
-
-# Kamui enhancement dependencies
+# Kamui enhancement (only scikit-learn for KMeans in background removal)
 scikit-learn==1.6.1
 
 # FastAPI and web
