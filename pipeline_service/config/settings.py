@@ -52,7 +52,7 @@ class Settings(BaseSettings):
     limit_padding: bool = Field(default=True, env="LIMIT_PADDING")
     
     # Kamui Enhancement: Mask Thresholding (Lowered for transparent objects)
-    mask_threshold: float = Field(default=0.5, env="MASK_THRESHOLD", description="Threshold for object detection - lower captures transparent objects")
+    mask_threshold: float = Field(default=0.35, env="MASK_THRESHOLD", description="Threshold for object detection - lower captures transparent objects")
     mask_threshold_min: float = Field(default=0.3, env="MASK_THRESHOLD_MIN", description="Minimum allowed threshold")
     mask_threshold_max: float = Field(default=0.95, env="MASK_THRESHOLD_MAX", description="Maximum allowed threshold")
     use_adaptive_threshold: bool = Field(default=False, env="USE_ADAPTIVE_THRESHOLD", description="Use Otsu's method for threshold")
@@ -71,7 +71,7 @@ class Settings(BaseSettings):
     max_object_coverage: float = Field(default=0.98, env="MAX_OBJECT_COVERAGE", description="Maximum object size (98% of image)")
     
     # Kamui Enhancement: Quality Monitoring
-    enable_quality_metrics: bool = Field(default=False, env="ENABLE_QUALITY_METRICS", description="Calculate quality metrics")
+    enable_quality_metrics: bool = Field(default=True, env="ENABLE_QUALITY_METRICS", description="Calculate quality metrics")
     log_centering_quality: bool = Field(default=False, env="LOG_CENTERING_QUALITY", description="Log object centering quality")
     
     # Kamui Enhancement: Transparency Enhancement for Glass Objects
